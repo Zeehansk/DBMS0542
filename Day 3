@@ -1,0 +1,67 @@
+mysql> create database dbms;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use dbms;
+Database changed
+
+mysql> create table list(name varchar(20),rollno int(20),dept varchar(30));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc list;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(20) | YES  |     | NULL    |       |
+| rollno | int(20)     | YES  |     | NULL    |       |
+| dept   | varchar(30) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> insert into list values("vami",23,"CSE");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into list values("ali",23,"ECE");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into list values("MLa",23,"EEE");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into list values("zeehan",23,"IT");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into list values("drum",23,"AI");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from list;
++--------+--------+------+
+| name   | rollno | dept |
++--------+--------+------+
+| vami   |     23 | CSE  |
+| ali    |     23 | ECE  |
+| MLa    |     23 | EEE  |
+| zeehan |     23 | IT   |
+| drum   |     23 | AI   |
++--------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql> select name from list;
++--------+
+| name   |
++--------+
+| vami   |
+| ali    |
+| MLa    |
+| zeehan |
+| drum   |
++--------+
+5 rows in set (0.00 sec)
+
+mysql> select*from list where name="MLa";
++------+--------+------+
+| name | rollno | dept |
++------+--------+------+
+| MLa  |     23 | EEE  |
++------+--------+------+
+1 row in set (0.00 sec)
+
+mysql>
