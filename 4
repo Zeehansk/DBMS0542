@@ -1,0 +1,112 @@
+
+Shaik1406
+/
+CSA0542_DBMS
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+CSA0542_DBMS/exp)_4 update&delete.txt
+@Shaik1406
+Shaik1406 Add files via upload
+ 1 contributor
+95 lines (80 sloc)  2.98 KB
+mysql> create database engineer;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use engineer;
+Database changed
+mysql> create table menbers(name varchar(20),dept varchar(30),regno int(40));
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc menbers;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(20) | YES  |     | NULL    |       |
+| dept  | varchar(30) | YES  |     | NULL    |       |
+| regno | int(40)     | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into menbers values("vamsi","CSE",123456);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into menbers values("ali","EEE",123456);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into menbers values("hussain","IT",234561);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into menbers values("tony","AI",18766561);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from menbers;
++---------+------+----------+
+| name    | dept | regno    |
++---------+------+----------+
+| vamsi   | CSE  |   123456 |
+| ali     | EEE  |   123456 |
+| hussain | IT   |   234561 |
+| tony    | AI   | 18766561 |
++---------+------+----------+
+4 rows in set (0.00 sec)
+
+mysql> update menbers set dept="mec" where name="234561";
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> desc menbers;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(20) | YES  |     | NULL    |       |
+| dept  | varchar(30) | YES  |     | NULL    |       |
+| regno | int(40)     | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> select*from menbers;
++---------+------+----------+
+| name    | dept | regno    |
++---------+------+----------+
+| vamsi   | CSE  |   123456 |
+| ali     | EEE  |   123456 |
+| hussain | IT   |   234561 |
+| tony    | AI   | 18766561 |
++---------+------+----------+
+4 rows in set (0.00 sec)
+
+mysql> update menbers set dept="mec" where name="hussain";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from menbers;
++---------+------+----------+
+| name    | dept | regno    |
++---------+------+----------+
+| vamsi   | CSE  |   123456 |
+| ali     | EEE  |   123456 |
+| hussain | mec  |   234561 |
+| tony    | AI   | 18766561 |
++---------+------+----------+
+4 rows in set (0.00 sec)
+
+mysql> delete from menbers where regno="234561";
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from menbers;
++-------+------+----------+
+| name  | dept | regno    |
++-------+------+----------+
+| vamsi | CSE  |   123456 |
+| ali   | EEE  |   123456 |
+| tony  | AI   | 18766561 |
++-------+------+----------+
+3 rows in set (0.00 sec)
+
+mysql>
