@@ -1,0 +1,75 @@
+mysql> use library;
+Database changed
+mysql> create table institute(inst_name varchar(30),inst_city varchar(40),inst_code int(50));
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc institute;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| inst_name | varchar(30) | YES  |     | NULL    |       |
+| inst_city | varchar(40) | YES  |     | NULL    |       |
+| inst_code | int(50)     | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table zeehan(z_name varchar(10),z_id int(30));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables in library;
++-------------------+
+| Tables_in_library |
++-------------------+
+| institute         |
+| zeehan            |
++-------------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into institute values("mgr","chennai",00976);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into institute values("saveetha","madras",078976);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into institute values("sec","thandalam",079676);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from institute;
++-----------+-----------+-----------+
+| inst_name | inst_city | inst_code |
++-----------+-----------+-----------+
+| mgr       | chennai   |       976 |
+| saveetha  | madras    |     78976 |
+| sec       | thandalam |     79676 |
++-----------+-----------+-----------+
+3 rows in set (0.01 sec)
+
+mysql> alter table institute add inst_nirf int(20);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> desc institute;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| inst_name | varchar(30) | YES  |     | NULL    |       |
+| inst_city | varchar(40) | YES  |     | NULL    |       |
+| inst_code | int(50)     | YES  |     | NULL    |       |
+| inst_nirf | int(20)     | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> drop zeehan;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'zeehan' at line 1
+mysql> drop table zeehan;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show tables in library;
++-------------------+
+| Tables_in_library |
++-------------------+
+| institute         |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql>
