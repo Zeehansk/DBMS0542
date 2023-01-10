@@ -1,21 +1,4 @@
 
-Sign up
-Shaik1406
-/
-CSA0542_DBMS
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-CSA0542_DBMS/create alter drop exp-1.txt
-@Shaik1406
-Shaik1406 Add files via upload
- 1 contributor
-78 lines (69 sloc)  2.4 KB
 use sse;
 Database changed
 mysql> create table faculty(facid int(10),facname varchar(20),facdept varchar(10),salary int(20));
